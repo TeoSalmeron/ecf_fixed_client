@@ -18,7 +18,6 @@ const Footer = () => {
         withCredentials: true
     })
     .then((response) => {
-        console.log(response.data)
       setSchedules(response.data.schedules)
     })
     .catch((error) => {

@@ -39,7 +39,7 @@ const Nav = () => {
         }
     }
 
-    // isUserConnected()
+    isUserConnected()
 
   return (
     <>
