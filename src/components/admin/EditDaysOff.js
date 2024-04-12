@@ -31,7 +31,7 @@ const EditOpeningSchedules = (props) => {
 
     const handleChange = (event, day) => {
 
-      const isOpen = event.target.value === "true" ? true : false
+      const isOpen = event.target.value === "1" ? 1 : 0
 
       switch(day) {
         case 0:
@@ -87,15 +87,15 @@ const EditOpeningSchedules = (props) => {
 
     // Get all schedules
     useEffect(() => {
-        // axios.get(process.env.REACT_APP_API_URL + "schedules", {
-        //   withCredentials: true
-        // })
-        // .then((response) => {
-        //   setSchedules(response.data.schedules)
-        // })
-        // .catch((error) => {
-        //   console.log(error.response.data)
-        // })
+        axios.get(process.env.REACT_APP_API_URL + "/schedules", {
+          withCredentials: true
+        })
+        .then((response) => {
+          setSchedules(response.data.schedules)
+        })
+        .catch((error) => {
+          console.log(error.response.data)
+        })
     }, [reload])
 
   return (
@@ -142,10 +142,10 @@ const EditOpeningSchedules = (props) => {
                     <option value="" disabled>
                       Choisir une option
                     </option>
-                    <option value="true">
+                    <option value="1">
                       Ouvert
                     </option>
-                    <option value="false">
+                    <option value="0">
                       Fermé
                     </option>
                   </select>
