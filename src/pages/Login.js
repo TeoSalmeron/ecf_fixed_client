@@ -32,38 +32,38 @@ const Login = () => {
     const handleSubmit = (event) => {
         event.preventDefault()
 
-        // axios.post(process.env.REACT_APP_API_URL + "/login", {
-        //     email: email,
-        //     password: password
-        // },
-        // {
-        //   withCredentials: true
-        // })
-        // .then((response) => {
-        //     if(response.data.token) {
-        //         signIn({
-        //             auth: {
-        //                 token: response.data.token,
-        //                 type: "Bearer",
+        axios.post(process.env.REACT_APP_API_URL + "/login", {
+            email: email,
+            password: password
+        },
+        {
+          withCredentials: true
+        })
+        .then((response) => {
+            if(response.data.token) {
+                signIn({
+                    auth: {
+                        token: response.data.token,
+                        type: "Bearer",
                         
-        //             },
-        //             userState: {
-        //                 id: response.data.user.id,
-        //                 email: response.data.user.email
-        //             }
-        //         })
-        //         if(response.data.user.role === "admin") {
-        //             window.location.assign("/dashboard/admin")
-        //         } else if (response.data.user.role === "employee") {
-        //             window.location.assign("/dashboard/employee")
-        //         }
-        //     } else {
-        //         setFormStatus(response.data.message)
-        //     }
-        // })  
-        // .catch((error) => {
-        //     setFormStatus(error.response.data)
-        // })
+                    },
+                    userState: {
+                        id: response.data.user.id,
+                        email: response.data.user.email
+                    }
+                })
+                if(response.data.user.role === "admin") {
+                    window.location.assign("/dashboard/admin")
+                } else if (response.data.user.role === "employee") {
+                    window.location.assign("/dashboard/employee")
+                }
+            } else {
+                setFormStatus(response.data.message)
+            }
+        })  
+        .catch((error) => {
+            setFormStatus(error.response.data)
+        })
     }
 
   return (
