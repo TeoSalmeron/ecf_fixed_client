@@ -24,7 +24,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start:prod": "npm install --omit=dev && npm run serve",
+    "start:prod": "npx http-server ./dist",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
