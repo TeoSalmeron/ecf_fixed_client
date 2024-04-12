@@ -27,7 +27,7 @@ const NewEmployee = () => {
             password: employeePassword,
             confirmPassword: employeeConfirmPassword
         }
-        axios.post(process.env.REACT_APP_API_URL + "create-employee", employee, {
+        axios.post(process.env.REACT_APP_API_URL + "/create-employee", employee, {
             withCredentials: true
         })
         .then((response) => {

@@ -23,7 +23,7 @@ const Nav = () => {
 
     const isUserConnected = async () => {
         try {
-            await axios.get(process.env.REACT_APP_API_URL + "auth/is-connected", {
+            await axios.get(process.env.REACT_APP_API_URL + "/auth/is-connected", {
                 withCredentials: true
             })
             .then((response) => {
@@ -39,7 +39,7 @@ const Nav = () => {
         }
     }
 
-    isUserConnected()
+    // isUserConnected()
 
   return (
     <>

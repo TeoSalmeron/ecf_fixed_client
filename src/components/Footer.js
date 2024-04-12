@@ -14,14 +14,18 @@ const Footer = () => {
     
   // Get schedules info
   useEffect(() => {
-    axios.get(process.env.REACT_APP_API_URL + "schedules")
+    axios.get(process.env.REACT_APP_API_URL + "/schedules", {
+        withCredentials: true
+    })
     .then((response) => {
+        console.log(response.data)
       setSchedules(response.data.schedules)
     })
     .catch((error) => {
       console.log(error.response)
     })
   }, [])
+
   return (
     <footer className='container'>
         <h3>

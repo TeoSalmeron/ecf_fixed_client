@@ -185,7 +185,7 @@ const Cars = () => {
         }
         
         try {
-            await axios.post(process.env.REACT_APP_API_URL + "cars/search", formData)
+            await axios.post(process.env.REACT_APP_API_URL + "/cars/search", formData)
             .then((response) => {
                 setQueryResponse(response.data)
             })            

@@ -7,23 +7,23 @@ export default function ProtectedRoute({ children }) {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        const checkAuth = async () => {
-            try {
-                const response = await axios.get(process.env.REACT_APP_API_URL + "auth",
-                {
-                    withCredentials: true
-                })
-                if (response.data.auth) {
-                    setAuth(true);
-                }
-            } catch (error) {
-                console.log(error.response.data);
-            } finally {
-                setLoading(false)
-            }
-        }
+        // const checkAuth = async () => {
+        //     try {
+        //         const response = await axios.get(process.env.REACT_APP_API_URL + "/auth",
+        //         {
+        //             withCredentials: true
+        //         })
+        //         if (response.data.auth) {
+        //             setAuth(true);
+        //         }
+        //     } catch (error) {
+        //         console.log(error.response.data);
+        //     } finally {
+        //         setLoading(false)
+        //     }
+        // }
 
-        checkAuth()
+        // checkAuth()
     }, [])
 
     if (loading) {

@@ -62,7 +62,7 @@ const EditClosingSchedules = () => {
         ]
 
         try {
-            const response = await axios.patch(process.env.REACT_APP_API_URL + "schedules/update/closing", newClosingSchedule, {
+            const response = await axios.patch(process.env.REACT_APP_API_URL + "/schedules/update/closing", newClosingSchedule, {
                 withCredentials: true
             })
             
@@ -106,15 +106,15 @@ const EditClosingSchedules = () => {
 
     // Get all schedules
     useEffect(() => {
-        axios.get(process.env.REACT_APP_API_URL + "schedules", {
-            withCredentials: true
-        })
-        .then((response) => {
-            setSchedules(response.data.schedules)
-        })
-        .catch((error) => {
-            console.log(error.response.data)
-        })
+        // axios.get(process.env.REACT_APP_API_URL + "schedules", {
+        //     withCredentials: true
+        // })
+        // .then((response) => {
+        //     setSchedules(response.data.schedules)
+        // })
+        // .catch((error) => {
+        //     console.log(error.response.data)
+        // })
     }, [reload])
 
 

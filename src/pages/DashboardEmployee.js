@@ -17,20 +17,20 @@ const DashboardEmployee = () => {
   
   // Get employee data
   useEffect(() => {
-    axios.get(process.env.REACT_APP_API_URL + "auth", {
-      withCredentials: true
-    })
-    .then((response) => {
-      if(response.data.role !== "employee") {
-        window.location.replace("/")
-      } else {
-        setLoading(false)
-        setUserEmail(response.data.email)
-      }
-    })
-    .catch((error) => {
-      console.log(error.response.data)
-    })
+    // axios.get(process.env.REACT_APP_API_URL + "/auth", {
+    //   withCredentials: true
+    // })
+    // .then((response) => {
+    //   if(response.data.role !== "employee") {
+    //     window.location.replace("/")
+    //   } else {
+    //     setLoading(false)
+    //     setUserEmail(response.data.email)
+    //   }
+    // })
+    // .catch((error) => {
+    //   console.log(error.response.data)
+    // })
   }, [])
 
   return (

@@ -69,7 +69,7 @@ const EditOpeningSchedules = (props) => {
       }
       
       try {
-        const response = await axios.patch(process.env.REACT_APP_API_URL + "schedules/update/days-off", dayToUpdate, {
+        const response = await axios.patch(process.env.REACT_APP_API_URL + "/schedules/update/days-off", dayToUpdate, {
           withCredentials: true 
         })
 
@@ -87,15 +87,15 @@ const EditOpeningSchedules = (props) => {
 
     // Get all schedules
     useEffect(() => {
-        axios.get(process.env.REACT_APP_API_URL + "schedules", {
-          withCredentials: true
-        })
-        .then((response) => {
-          setSchedules(response.data.schedules)
-        })
-        .catch((error) => {
-          console.log(error.response.data)
-        })
+        // axios.get(process.env.REACT_APP_API_URL + "schedules", {
+        //   withCredentials: true
+        // })
+        // .then((response) => {
+        //   setSchedules(response.data.schedules)
+        // })
+        // .catch((error) => {
+        //   console.log(error.response.data)
+        // })
     }, [reload])
 
   return (

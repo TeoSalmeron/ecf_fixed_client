@@ -100,24 +100,26 @@ const Home = () => {
 
   // Get verified reviews
   useEffect(() => {
-    axios.get(process.env.REACT_APP_API_URL + "reviews/verified")
-    .then((response) => {
-      setReviews(response.data)
-    })
-    .catch((error) => {
-      console.log(error.response)
-    })
+    // axios.get(process.env.REACT_APP_API_URL + "/reviews/verified")
+    // .then((response) => {
+    //   console.log(response.data)
+    //   // setReviews(response.data)
+    // })
+    // .catch((error) => {
+    //   console.log(error.response)
+    // })
   }, [])
 
   // Get 3 last cars
   useEffect(() => {
-    axios.get(process.env.REACT_APP_API_URL + "cars/latest")
-    .then((response) => {
-      setLatestCars(response.data)
-    })
-    .catch((error) => {
-      console.log(error.response)
-    })
+    // axios.get(process.env.REACT_APP_API_URL + "/cars/latest")
+    // .then((response) => {
+    //   console.log(response.data)
+    //   // setLatestCars(response.data)
+    // })
+    // .catch((error) => {
+    //   console.log(error.response)
+    // })
   }, [])
 
   return (

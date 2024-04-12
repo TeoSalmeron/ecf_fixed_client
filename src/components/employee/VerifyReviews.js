@@ -43,7 +43,7 @@ const VerifyReviews = () => {
         return
       }
 
-      const response = await axios.post(process.env.REACT_APP_API_URL + "reviews/manage",{
+      const response = await axios.post(process.env.REACT_APP_API_URL + "/reviews/manage",{
         id: id,
         action: action
       })
@@ -58,13 +58,13 @@ const VerifyReviews = () => {
   }
 
   useEffect(() => {
-    axios.get(process.env.REACT_APP_API_URL + "reviews/unverified")
-    .then((response) => {
-      setUnverifiedReviews(response.data)
-    })
-    .catch((error) => {
-      console.log(error.response)
-    })
+    // axios.get(process.env.REACT_APP_API_URL + "/reviews/unverified")
+    // .then((response) => {
+    //   setUnverifiedReviews(response.data)
+    // })
+    // .catch((error) => {
+    //   console.log(error.response)
+    // })
   }, [reload])
   return (
     <Accordion className='accordion'>

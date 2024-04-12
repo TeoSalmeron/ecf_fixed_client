@@ -110,7 +110,7 @@ const NewCar = () => {
       formData.append("image", file)
       formData.append("garage_id", 1)
 
-      const response = await axios.post(process.env.REACT_APP_API_URL + "cars/create", formData)
+      const response = await axios.post(process.env.REACT_APP_API_URL + "/cars/create", formData)
       
       setFormStatus(response.data)
       setFormStatusColor("green")
