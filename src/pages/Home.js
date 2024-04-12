@@ -44,7 +44,7 @@ const Home = () => {
     }
     
     try {
-      const response = await axios.post(process.env.REACT_APP_API_URL + "reviews/create", {
+      const response = await axios.post(process.env.REACT_APP_API_URL + "/reviews/create", {
         score: parseInt(score),
         comment: comment,
         verified: false
