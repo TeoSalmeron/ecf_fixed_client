@@ -328,7 +328,7 @@ const Cars = () => {
                             <h3>
                                 {car.title}
                             </h3>
-                            <div className="image-container" style={{backgroundImage:`url(${process.env.REACT_APP_API_URL}images/${car.image})`, backgroundSize: "cover", backgroundPosition: "center"}}>
+                            <div className="image-container" style={{backgroundImage:`url(${process.env.REACT_APP_API_URL}/images/${car.image})`, backgroundSize: "cover", backgroundPosition: "center"}}>
                             </div>
                             <ul>
                                 <li>
