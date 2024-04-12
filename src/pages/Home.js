@@ -100,26 +100,25 @@ const Home = () => {
 
   // Get verified reviews
   useEffect(() => {
-    // axios.get(process.env.REACT_APP_API_URL + "/reviews/verified")
-    // .then((response) => {
-    //   console.log(response.data)
-    //   // setReviews(response.data)
-    // })
-    // .catch((error) => {
-    //   console.log(error.response)
-    // })
+    axios.get(process.env.REACT_APP_API_URL + "/reviews/verified")
+    .then((response) => {
+      setReviews(response.data)
+    })
+    .catch((error) => {
+      console.log(error.response)
+    })
   }, [])
 
   // Get 3 last cars
   useEffect(() => {
-    // axios.get(process.env.REACT_APP_API_URL + "/cars/latest")
-    // .then((response) => {
-    //   console.log(response.data)
-    //   // setLatestCars(response.data)
-    // })
-    // .catch((error) => {
-    //   console.log(error.response)
-    // })
+    axios.get(process.env.REACT_APP_API_URL + "/cars/latest")
+    .then((response) => {
+      console.log(response.data)
+      setLatestCars(response.data)
+    })
+    .catch((error) => {
+      console.log(error.response)
+    })
   }, [])
 
   return (
@@ -209,7 +208,7 @@ const Home = () => {
           {latestCars.map((car) => (
             <div className="latest-car" key={car.id}>
               <div className="car-image">
-                <img src={process.env.REACT_APP_API_URL + "images/" + car.image} alt={car.title}/>
+                <img src={process.env.REACT_APP_API_URL + "/images/" + car.image} alt={car.title}/>
               </div>
               <h3>
                 {car.title}
