@@ -35,9 +35,6 @@ const Login = () => {
         axios.post(process.env.REACT_APP_API_URL + "/login", {
             email: email,
             password: password
-        },
-        {
-          withCredentials: true
         })
         .then((response) => {
             if(response.data.token) {
